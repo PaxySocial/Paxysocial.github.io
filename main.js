@@ -9,7 +9,7 @@ $.ajax({
   data: {
     ident: "paxy",
     secret: "19ff98ce-d676-11ea-8660-0242ac150002",
-    channel: "Paxysocial.github.io",
+    domain: "Paxysocial.github.io",
     application: "default",
     room: "default",
     secure: 1
