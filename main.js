@@ -5,11 +5,11 @@ $('#div-chat').hide();
 let customConfig;
 
 $.ajax({
-  url: "https://service.xirsys.com/ice",
+  url: "https://global.xirsys.net",
   data: {
-    ident: "vanpho",
-    secret: "2b1c2dfe-4374-11e7-bd72-5a790223a9ce",
-    domain: "vanpho93.github.io",
+    ident: "paxy",
+    secret: "19ff98ce-d676-11ea-8660-0242ac150002",
+    domain: "Paxysocial.github.io",
     application: "default",
     room: "default",
     secure: 1
@@ -58,7 +58,13 @@ function playStream(idVideoTag, stream) {
 // openStream()
 // .then(stream => playStream('localStream', stream));
 
-const peer = new Peer({ key: 'peerjs', host: 'marcopeers.herokuapp.com', secure: true, port: 443});
+const peer = new Peer({ 
+    key: 'peerjs',
+    host: 'marcopeers.herokuapp.com', 
+    secure: true,
+    port: 443,
+    config: customConfig
+});
 
 peer.on('open', id => {
     $('#my-peer').append(id);
