@@ -12,7 +12,7 @@ let o = {
 };
 
 let bodyString = JSON.stringify(o);
-let https = require("https");
+let http = require("https");
 let options = {
     host: "global.xirsys.net",
     path: "/_turn/Paxysocial.github.io",
