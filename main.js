@@ -5,7 +5,7 @@ $('#div-chat').hide();
 let customConfig;
 
 $.ajax({
-  url: "https://service.xirsys.com/ice",
+  url: "https://global.xirsys.net",
   data: {
     ident: "paxy",
     secret: "19ff98ce-d676-11ea-8660-0242ac150002",
