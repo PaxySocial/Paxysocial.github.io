@@ -2,6 +2,27 @@ const socket = io('paxy.herokuapp.com');
 
 $('#div-chat').hide();
 
+let customConfig;
+
+$.ajax({
+  url: "https://service.xirsys.com/ice",
+  data: {
+    ident: "paxy",
+    secret: "19ff98ce-d676-11ea-8660-0242ac150002",
+    channel: "MyFirstApp",
+    domain: "Paxysocial.github.io",
+    application: "default",
+    room: "default",
+    secure: 1
+  },
+  success: function (data, status) {
+    // data.d is where the iceServers object lives
+    customConfig = data.d;
+    console.log(customConfig);
+  },
+  async: false
+});
+
 
 
 
@@ -42,7 +63,7 @@ function playStream(idVideoTag, stream) {
 // openStream()
 // .then(stream => playStream('localStream', stream));
 
-const peer = new Peer({ key: 'peerjs', host: 'paxypeer.herokuapp.com', secure: true, port: 443});
+const peer = new Peer({ key: 'peerjs', host: 'paxypeer.herokuapp.com', secure: true, port: 443, config: customConfig});
 
 peer.on('open', id => {
     $('#my-peer').append(id);
