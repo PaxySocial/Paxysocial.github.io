@@ -1,4 +1,4 @@
-const socket = io('paxy.herokuapp.com/host:3000');
+const socket = io('paxy.herokuapp.com');
 
 $('#div-chat').hide();
 
