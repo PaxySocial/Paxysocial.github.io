@@ -1,12 +1,10 @@
-const socket = io('https://marcopeers.herokuapp.com/');
+const socket = io('paxy.herokuapp.com/host:3000');
 
 $('#div-chat').hide();
 
-let customConfig;
 
 
 
-// Node Get ICE STUN and TURN list
 
 socket.on('DANH_SACH_ONLINE', arrUserInfo => {
     $('#div-chat').show();
@@ -45,7 +43,7 @@ function playStream(idVideoTag, stream) {
 // .then(stream => playStream('localStream', stream));
 
 const peer = new Peer({ 
-   
+  
 });
 
 peer.on('open', id => {
